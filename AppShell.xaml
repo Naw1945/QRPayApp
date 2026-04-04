@@ -1,0 +1,20 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:QRPayApp"
+       x:Class="QRPayApp.AppShell">
+
+    <TabBar>
+        <Tab Title="Ban Hang" Icon="cart.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TrangBanHang}" />
+        </Tab>
+        <Tab Title="Kho Hang" Icon="box.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TrangKhoHang}" />
+        </Tab>
+        <Tab Title="Lich Su" Icon="history.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TrangLichSu}" />
+        </Tab>
+        <Tab Title="Cai Dat" Icon="settings.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TrangCaiDat}" />
+        </Tab>
+    </TabBar>
+</Shell>
