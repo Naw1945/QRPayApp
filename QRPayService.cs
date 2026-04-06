@@ -6,7 +6,7 @@ namespace QRPayApp.Services;
 
 public class QRPayService
 {
-    // ham tao chuoi vietqr chuan theo logic ban cung cap
+
     public string taoPayloadVietQR(string bin, string stk, string tien)
     {
         string payload = "000201010211";
@@ -27,13 +27,13 @@ public class QRPayService
         payload += "5802VN";
         payload += "6304";
 
-        // tinh toan va ghep ma crc16 vao cuoi
+
         payload += tinhToanCRC16(payload);
 
         return payload;
     }
 
-    // thuat toan tinh crc16
+
     private string tinhToanCRC16(string noiDung)
     {
         ushort crc = 0xFFFF;
@@ -52,20 +52,18 @@ public class QRPayService
         return crc.ToString("X4");
     }
 
-    // ham tao anh qr (tra ve byte[] de maui hien thi va luu sqlite duoc)
+
     public byte[] taoAnhQR(string bin, string stk, double tien)
     {
         try
         {
-            // goi ham tao chuoi vietqr o tren
+
             string payload = taoPayloadVietQR(bin, stk, tien.ToString());
 
             using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
             {
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
-
-                // su dung pngbyteqrcode thay cho bitmap de tuong thich maui
-                using (PngByteQRCode qrCode = new PngByteQRCode(qrCodeData))
+           using (PngByteQRCode qrCode = new PngByteQRCode(qrCodeData))
                 {
                     return qrCode.GetGraphic(20);
                 }

@@ -4,16 +4,16 @@
        x:Class="QRPayApp.AppShell">
 
     <TabBar>
-        <Tab Title="Ban Hang" Icon="cart.png">
+        <Tab Title="Thanh toán" Icon="cart.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrangBanHang}" />
         </Tab>
-        <Tab Title="Kho Hang" Icon="box.png">
+        <Tab Title="Kho Hàng" Icon="box.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrangKhoHang}" />
         </Tab>
-        <Tab Title="Lich Su" Icon="history.png">
+        <Tab Title="Lịch sử" Icon="history.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrangLichSu}" />
         </Tab>
-        <Tab Title="Cai Dat" Icon="settings.png">
+        <Tab Title="Cài đặt " Icon="settings.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrangCaiDat}" />
         </Tab>
     </TabBar>

@@ -1,19 +1,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QRPayApp.TrangKhoHang" Title="Kho Hang">
+             x:Class="QRPayApp.TrangKhoHang" Title="Kho Hàng">
     <VerticalStackLayout Padding="20" Spacing="10">
 
-        <Entry x:Name="txtTen" Placeholder="Ten san pham"/>
+        <Entry x:Name="txtTen" Placeholder="Tên sản phẩm"/>
 
         <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
-            <Entry x:Name="txtGia" Placeholder="Gia ban" Keyboard="Numeric"/>
-            <Entry Grid.Column="1" x:Name="txtTonKho" Placeholder="So luong ton kho" Keyboard="Numeric"/>
+            <Entry x:Name="txtGia" Placeholder="Giá bán" Keyboard="Numeric"/>
+            <Entry Grid.Column="1" x:Name="txtTonKho" Placeholder="Số lượng tồn kho" Keyboard="Numeric"/>
         </Grid>
 
         <Grid ColumnDefinitions="*, *, *" ColumnSpacing="10">
-            <Button Text="Them" Clicked="them" BackgroundColor="Green" TextColor="White"/>
-            <Button Grid.Column="1" Text="Sua" Clicked="sua" BackgroundColor="Orange" TextColor="White"/>
-            <Button Grid.Column="2" Text="Xoa" Clicked="xoa" BackgroundColor="Red" TextColor="White"/>
+            <Button Text="Thêm sp" Clicked="them" BackgroundColor="Green" TextColor="White"/>
+            <Button Grid.Column="1" Text="Sửa" Clicked="sua" BackgroundColor="Orange" TextColor="White"/>
+            <Button Grid.Column="2" Text="Xoá" Clicked="xoa" BackgroundColor="Red" TextColor="White"/>
         </Grid>
 
         <CollectionView x:Name="listKho" SelectionMode="Single" SelectionChanged="chon" HeightRequest="400">

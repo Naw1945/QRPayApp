@@ -40,7 +40,6 @@ public partial class TrangCaiDat : ContentPage
         txtSoTaiKhoan.Text = caiDatHienTai.soTaiKhoan;
         txtBin.Text = caiDatHienTai.bin;
 
-        // load lai ngan hang da chon vao combobox
         var nhDangLuu = dsNganHang.FirstOrDefault(x => x.bin == caiDatHienTai.bin);
         if (nhDangLuu != null)
         {
@@ -61,7 +60,7 @@ public partial class TrangCaiDat : ContentPage
     {
         if (string.IsNullOrEmpty(txtSoTaiKhoan.Text) || cboNganHang.SelectedItem == null)
         {
-            DisplayAlert("Loi", "Vui long nhap day du thong tin", "OK");
+            DisplayAlert("Lỗi", "Vui lòng nhập đầy đủ thông tin", "OK");
             return;
         }
 
@@ -71,6 +70,6 @@ public partial class TrangCaiDat : ContentPage
         caiDatHienTai.soTaiKhoan = txtSoTaiKhoan.Text;
 
         db.luuCaiDat(caiDatHienTai);
-        DisplayAlert("Thanh cong", "Da luu thong tin tai khoan!", "OK");
+        DisplayAlert("Thành công", "Đã lưu thông tin tài khoản", "OK");
     }
 }

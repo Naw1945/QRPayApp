@@ -1,20 +1,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QRPayApp.TrangCaiDat" Title="Cai Dat">
+             x:Class="QRPayApp.TrangCaiDat" Title="Cài đặt ">
     <VerticalStackLayout Padding="20" Spacing="15">
 
-        <Label Text="Thiet lap tai khoan nhan tien" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Label Text="Thiết lập tài khoản nhận tiền " FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-        <Label Text="Chon Ngan Hang:" FontAttributes="Bold"/>
+        <Label Text="Chọn ngân hàng :" FontAttributes="Bold"/>
         <Picker x:Name="cboNganHang" ItemDisplayBinding="{Binding ten}" SelectedIndexChanged="chonNganHang"/>
 
-        <Label Text="Ma BIN:" FontAttributes="Bold" Margin="0,10,0,0"/>
-        <Entry x:Name="txtBin" IsReadOnly="True" BackgroundColor="LightGray" />
+        
+        <Entry x:Name="txtBin" IsVisible="False" />
 
-        <Label Text="So Tai Khoan:" FontAttributes="Bold" Margin="0,10,0,0"/>
+        <Label Text="Số tài khoản :" FontAttributes="Bold" Margin="0,10,0,0"/>
         <Entry x:Name="txtSoTaiKhoan" Keyboard="Numeric" />
 
-        <Button Text="LUU CAI DAT" Clicked="luuThongTin" BackgroundColor="Blue" TextColor="White" Margin="0,20,0,0"/>
+        <Button Text="LƯU CÀI ĐẶT" Clicked="luuThongTin" BackgroundColor="Blue" TextColor="White" Margin="0,20,0,0"/>
 
     </VerticalStackLayout>
 </ContentPage>

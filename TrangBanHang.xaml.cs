@@ -17,8 +17,6 @@ public partial class TrangBanHang : ContentPage
     {
         base.OnAppearing();
         kho = db.layKho();
-
-        // reset lai so luong moi khi mo tab ban hang
         foreach (var sp in kho) sp.soLuong = 0;
 
         listSp.ItemsSource = new ObservableCollection<SanPham>(kho);
@@ -30,22 +28,20 @@ public partial class TrangBanHang : ContentPage
     void timKiem(object s, TextChangedEventArgs e)
     {
         var tim = e.NewTextValue?.ToLower() ?? "";
-
-        // Thêm (x.ten ?? "") để chống lỗi null
         listSp.ItemsSource = kho.Where(x => (x.ten ?? "").ToLower().Contains(tim)).ToList();
     }
 
     void tinhTien(object s, TextChangedEventArgs e)
     {
         tongTien = kho.Sum(x => x.gia * x.soLuong);
-        lblTong.Text = $"Tong: {tongTien:N0} VND";
+        lblTong.Text = $"Tổng: {tongTien:N0} VND";
     }
 
     void thanhToan(object s, EventArgs e)
     {
         if (tongTien <= 0)
         {
-            DisplayAlert("Loi", "Chua chon san pham nao!", "OK");
+            DisplayAlert("Lỗi ", "Chưa chọn sản phẩm nào!", "OK");
             return;
         }
 
@@ -65,6 +61,6 @@ public partial class TrangBanHang : ContentPage
             db.suaSp(sp);
         }
 
-        DisplayAlert("Xong", "Da tao QR va luu hoa don, kho hang da duoc cap nhat!", "OK");
+        DisplayAlert("Xong", "Đã lưu hóa đơn", "OK");
     }
 }

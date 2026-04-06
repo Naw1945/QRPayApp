@@ -1,9 +1,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QRPayApp.TrangBanHang" Title="Ban Hang">
+             x:Class="QRPayApp.TrangBanHang" Title="Thanh toán">
     <Grid RowDefinitions="Auto, *, Auto, Auto" Padding="15" RowSpacing="10">
 
-        <SearchBar x:Name="txtTim" Placeholder="Tim san pham..." TextChanged="timKiem" />
+        <SearchBar x:Name="txtTim" Placeholder="Tìm sản phẩm..." TextChanged="timKiem" />
 
         <CollectionView Grid.Row="1" x:Name="listSp">
             <CollectionView.ItemTemplate>
@@ -17,10 +17,10 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Label Grid.Row="2" x:Name="lblTong" Text="Tong: 0 VND" FontSize="20" FontAttributes="Bold" HorizontalOptions="End"/>
+        <Label Grid.Row="2" x:Name="lblTong" Text="Tổng: 0 VND" FontSize="20" FontAttributes="Bold" HorizontalOptions="End"/>
 
         <VerticalStackLayout Grid.Row="3" Spacing="5">
-            <Button Text="TAO QR &amp; THANH TOAN" Clicked="thanhToan" BackgroundColor="Blue" TextColor="White"/>
+            <Button Text="TẠO QR &amp; THANH TOÁN" Clicked="thanhToan" BackgroundColor="Blue" TextColor="White"/>
             <Image x:Name="imgQR" HeightRequest="200" IsVisible="False"/>
         </VerticalStackLayout>
 
