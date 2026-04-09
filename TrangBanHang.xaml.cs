@@ -18,6 +18,7 @@ public partial class TrangBanHang : ContentPage
         base.OnAppearing();
         kho = db.layKho();
         foreach (var sp in kho) sp.soLuong = 0;
+        //listSp.ItemsSource = null;
 
         listSp.ItemsSource = new ObservableCollection<SanPham>(kho);
         tinhTien(null, null);
